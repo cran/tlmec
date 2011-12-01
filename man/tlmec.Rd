@@ -27,7 +27,7 @@ tlmec(cens = NULL, y = NULL, x = NULL, z = NULL, nj = NULL,
   \item{iter.max}{The maximum number of iteration of the EM algorithm.}
   \item{error}{The convergence maximum error.}
 }
-\value{Estimated values of beta, sigma2 and the covariance matrix of the random effects.}
+\value{Estimated values of beta, sigma2, the covariance matrix of the random effects and the random effects.}
 \author{Larissa Matos \email{larissa.amatos@gmail.com}, Marcos Prates <marcosop@ime.unicamp.br> 
 and Victor Lachos <hlachos@ime.unicamp.br>}
 \seealso{\code{\link{UTIdata}}}

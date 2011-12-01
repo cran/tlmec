@@ -1,11 +1,16 @@
-########################################
-## Modelos Lineares Mistos Censurados ##
-########################################
+################################################################################
+############## Mixed-Effects Models With Censored Response #####################
+################################################################################
 
-## Algoritmo EM  ##
+## Normal ##
 
+## Linear Case ##
 
-## Agoritmo EM Dados Censurados ##
+## EM Algorithm ##
+
+################################################################################
+#################### EM Algorithm / Censored Response ##########################
+################################################################################
 
 EMN<-function(cc,y,x,z,nj,initial,criteria,diagnostic,error,iter.max){
 
@@ -139,10 +144,6 @@ EMN<-function(cc,y,x,z,nj,initial,criteria,diagnostic,error,iter.max){
     logver <- sum(log(ver))
     varbeta<-solve(soma5)
 
- ## if (count>1){
- ##   criterio <- (abs(logver1-logver))
- ## }
-
     if (count>1){
       criterio <- sqrt((teta1/teta-1)%*%(teta1/teta-1))
     }
@@ -170,11 +171,11 @@ EMN<-function(cc,y,x,z,nj,initial,criteria,diagnostic,error,iter.max){
     crit <- list(loglik=loglik, AIC=AICc, BIC=BICc, AICcorr=AICcorr)
   }
   if(diagnostic)
-     obj.out <- c(list(beta = beta1, sigmae= sigmae, dd = dd, crit, iter = count, ubi = ubi, ubbi = ubbi, 
+     obj.out <- c(list(beta = beta1, sigmae= sigmae, dd = dd, varfixed = varbeta, bi = ubi,crit, iter = count, ubi = ubi, ubbi = ubbi, 
                   uybi = uybi, uyi = uyi, uyyi = uyyi, diagnostic = diagnostic),crit)
   else
-     obj.out <- c(list(beta = beta1, sigmae= sigmae, dd = dd, loglik=loglik, AIC=AICc, BIC=BICc, AICcorr=AICcorr, iter = count,
-                       diagnostic = diagnostic),crit)
+     obj.out <- c(list(beta = beta1, sigmae= sigmae, dd = dd, varfixed = varbeta, bi = ubi,loglik=loglik, AIC=AICc, BIC=BICc, 
+                       AICcorr=AICcorr, iter = count, diagnostic = diagnostic),crit)
 
   class(obj.out) <- "Normal"
 

@@ -2,5 +2,11 @@
 
   * first version generated
 
+2012-01-27 (0.0-2) Larissa Matos \email{larissa.amatos@gmail.com}, Marcos Prates <marcosop@ime.unicamp.br> and Victor Lachos <hlachos@ime.unicamp.br> 
+
+  * added estimated random effects
+  * added variance matrix for fixed effects
+  
+
 
 
